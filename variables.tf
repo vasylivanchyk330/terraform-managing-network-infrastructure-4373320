@@ -23,12 +23,7 @@ variable "vpc_cidr" {
   type         = string
 }
 
-variable "subnet_name" {
+variable "subnets" {
   description  = "Name of AWS subnet"
-  type         = string
-}
-
-variable "subnet_cidr" {
-  description  = "CIDR of AWS subnet"
-  type         = string
+  type         = list(string)
 }
