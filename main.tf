@@ -4,7 +4,6 @@ resource "aws_vpc" "dev" {
   tags = {
     Name = var.vpc_name
   }
-
 }
 
 resource "aws_subnet" "dev" {
