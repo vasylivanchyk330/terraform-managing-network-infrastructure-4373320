@@ -9,12 +9,12 @@ resource "aws_key_pair" "dev" {
 
 
 resource "aws_instance" "example_instance" {
-  count = length(var.instances)
+  count                       = length(var.instances)
   ami                         = var.ami_id
   instance_type               = var.instance_type
   key_name                    = aws_key_pair.dev.key_name
   subnet_id                   = aws_subnet.dev[count.index].id
-  associated_public_addresses = true
+  associate_public_ip_address = true
 
   tags = {
     Name = var.instances[count.index]
